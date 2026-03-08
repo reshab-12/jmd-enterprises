@@ -1,9 +1,12 @@
-```html
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>JMD Enterprises | OP Shine</title>
 
 <style>
@@ -17,307 +20,190 @@ font-family:Arial, Helvetica, sans-serif;
 
 body{
 background:#f5f7fb;
-color:#333;
-}
-
-/* NAVBAR */
-
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 40px;
-background:#0b3d91;
-color:white;
-}
-
-nav h2{
-font-size:22px;
-}
-
-nav ul{
-display:flex;
-gap:20px;
-list-style:none;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-font-weight:bold;
 }
 
 /* HERO SECTION */
 
 .hero{
-height:90vh;
+
+height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
 padding:20px;
+
 background:linear-gradient(120deg,#0b3d91,#1e5ed8);
+
 color:white;
 position:relative;
 overflow:hidden;
+
+}
+
+/* FACTORY BACKGROUND IMAGE */
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:url("factory.png") center/cover no-repeat;
+
+opacity:0.15;
+
+}
+
+/* POWDER PARTICLES */
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:200%;
+height:200%;
+
+background-image:radial-gradient(white 2px, transparent 2px);
+
+background-size:50px 50px;
+
+opacity:0.2;
+
+animation:powderMove 25s linear infinite;
+
+}
+
+@keyframes powderMove{
+
+from{transform:translateY(0);}
+to{transform:translateY(-200px);}
+
+}
+
+/* TEXT */
+
+.hero h3{
+
+font-size:26px;
+margin-bottom:15px;
+
 }
 
 .hero h1{
-font-size:40px;
-margin-bottom:10px;
+
+font-size:42px;
+margin-bottom:20px;
+
 }
 
 .hero p{
-font-size:20px;
-margin-bottom:25px;
+
+max-width:750px;
+
+line-height:1.6;
+
+font-size:18px;
+
+margin-bottom:35px;
+
 }
 
-/* BUTTON */
+/* BUTTONS */
 
-.btn-main{
+.buttons{
+
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+
+}
+
+.btn{
+
 background:#ffcc00;
+
 color:#000;
-padding:14px 30px;
+
+padding:15px 32px;
+
 border-radius:30px;
+
 text-decoration:none;
+
 font-weight:bold;
-display:inline-block;
+
 transition:0.3s;
-box-shadow:0 6px 15px rgba(0,0,0,0.2);
+
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+
 animation:popup 0.6s ease;
-margin:10px;
+
 }
 
-.btn-main:hover{
-transform:translateY(-4px) scale(1.05);
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
+.btn:hover{
+
+transform:translateY(-5px) scale(1.05);
+
+box-shadow:0 12px 25px rgba(0,0,0,0.3);
+
 background:#ffd633;
+
 }
 
 @keyframes popup{
+
 0%{
 transform:scale(0.8);
 opacity:0;
 }
+
 100%{
 transform:scale(1);
 opacity:1;
 }
-}
 
-/* PARTICLES */
-
-.hero::before{
-content:"";
-position:absolute;
-width:200%;
-height:200%;
-background-image:radial-gradient(white 2px, transparent 2px);
-background-size:50px 50px;
-opacity:0.15;
-animation:moveParticles 20s linear infinite;
-}
-
-@keyframes moveParticles{
-from{transform:translateY(0);}
-to{transform:translateY(-200px);}
-}
-
-/* SECTION */
-
-section{
-padding:70px 20px;
-text-align:center;
-}
-
-section h2{
-font-size:32px;
-margin-bottom:20px;
-color:#0b3d91;
-}
-
-/* PRODUCTS */
-
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-padding:30px;
-}
-
-.card{
-background:white;
-padding:25px;
-border-radius:10px;
-box-shadow:0 8px 20px rgba(0,0,0,0.1);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 12px 25px rgba(0,0,0,0.2);
-}
-
-.card h3{
-margin-bottom:10px;
-color:#0b3d91;
-}
-
-/* CONTACT */
-
-.contact{
-background:#eaf2ff;
-}
-
-form{
-max-width:400px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-input,textarea{
-padding:12px;
-border-radius:6px;
-border:1px solid #ccc;
-}
-
-button{
-background:#ffcc00;
-border:none;
-padding:14px;
-border-radius:25px;
-font-weight:bold;
-cursor:pointer;
-transition:0.3s;
-}
-
-button:hover{
-background:#ffd633;
-transform:scale(1.05);
-}
-
-/* FOOTER */
-
-footer{
-background:#0b3d91;
-color:white;
-text-align:center;
-padding:15px;
-margin-top:40px;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<nav>
-<h2>OP Shine</h2>
+<header class="hero">
 
-<ul>
-<li><a href="#">Home</a></li>
-<li><a href="#products">Products</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
+<h3>🙏 नमस्कार 🙏</h3>
 
+<h1>JMD ENTERPRISES (OP SHINE)</h1>
 
-<!-- HERO -->
+<p>
 
-<section class="hero">
+JMD Enterprises (OP Shine) एक भारतीय ब्रांड है जो उच्च गुणवत्ता वाले डिटर्जेंट,
+क्लीनिंग प्रोडक्ट्स और रॉ मटेरियल सप्लाई करता है। हमारा उद्देश्य ग्राहकों को
+अच्छी क्वालिटी के प्रोडक्ट उचित कीमत पर उपलब्ध कराना है। हम bulk order,
+custom manufacturing और private brand manufacturing भी करते हैं।
 
-<h1>आपका अपना हिन्दुस्तानी ब्रांड</h1>
+</p>
 
-<p>High Quality Detergent & Cleaning Products Manufacturer</p>
+<div class="buttons">
 
-<a href="#products" class="btn-main">📦 हमारे प्रोडक्ट देखें</a>
-<a href="#contact" class="btn-main">📞 संपर्क करें</a>
+<a href="products.html" class="btn">📦 Our Products</a>
 
-</section>
-
-
-<!-- PRODUCTS -->
-
-<section id="products">
-
-<h2>Our Products</h2>
-
-<div class="products">
-
-<div class="card">
-<h3>Detergent Powder</h3>
-<p>High quality washing powder for clothes cleaning.</p>
-</div>
-
-<div class="card">
-<h3>Laundry Special</h3>
-<p>Advanced detergent for powerful stain removal.</p>
-</div>
-
-<div class="card">
-<h3>Liquid Detergent</h3>
-<p>Liquid solution for effective cloth washing.</p>
-</div>
-
-<div class="card">
-<h3>Fabric Whitener</h3>
-<p>Helps maintain brightness of clothes.</p>
-</div>
-
-<div class="card">
-<h3>Hand Wash</h3>
-<p>Gentle and effective hand cleaning liquid.</p>
-</div>
-
-<div class="card">
-<h3>Dish Wash</h3>
-<p>Removes grease and keeps utensils shiny.</p>
-</div>
-
-<div class="card">
-<h3>Toilet Cleaner</h3>
-<p>Powerful formula for toilet cleaning.</p>
-</div>
-
-<div class="card">
-<h3>Glass Cleaner</h3>
-<p>Keeps glass surfaces crystal clear.</p>
-</div>
+<a href="raw.html" class="btn">🧪 Raw Material</a>
 
 </div>
 
-</section>
-
-
-<!-- CONTACT -->
-
-<section id="contact" class="contact">
-
-<h2>Contact Us</h2>
-
-<form>
-
-<input type="text" placeholder="Your Name">
-
-<input type="tel" placeholder="Phone Number">
-
-<textarea rows="4" placeholder="Message"></textarea>
-
-<button type="submit">Send Inquiry</button>
-
-</form>
-
-</section>
-
-
-<footer>
-
-<p>© 2026 JMD Enterprises | OP Shine</p>
-
-</footer>
+</header>
 
 </body>
 </html>
