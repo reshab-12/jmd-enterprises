@@ -7,23 +7,34 @@
 
 body{
 font-family:Arial;
-background:#f4f4f4;
+background:linear-gradient(120deg,#2193b0,#6dd5ed);
+margin:0;
 text-align:center;
 }
 
 h1{
-background:#203a43;
+padding:30px;
 color:white;
-padding:20px;
+}
+
+.container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+padding:30px;
 }
 
 .card{
 background:white;
-margin:20px auto;
 padding:20px;
-max-width:500px;
 border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.2);
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+a{
+display:block;
+margin:30px;
+font-weight:bold;
 }
 
 </style>
@@ -33,6 +44,8 @@ box-shadow:0 0 10px rgba(0,0,0,0.2);
 <body>
 
 <h1>Raw Materials</h1>
+
+<div class="container">
 
 <div class="card">Dolomite</div>
 <div class="card">Soda Ash</div>
@@ -44,8 +57,10 @@ box-shadow:0 0 10px rgba(0,0,0,0.2);
 <div class="card">AOS</div>
 <div class="card">CAPB</div>
 <div class="card">TSP Powder</div>
+<div class="card">Colour Dana</div>
+<div class="card">HITOX Stain Remover</div>
 
-<br><br>
+</div>
 
 <a href="index.html">⬅ Back to Home</a>
 
