@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +23,7 @@ background:#f5f7fb;
 overflow-x:hidden;
 }
 
-/* HERO SECTION */
+/* HERO */
 
 .hero{
 height:100vh;
@@ -34,39 +35,10 @@ text-align:center;
 padding:20px;
 background:linear-gradient(120deg,#0b3d91,#1e5ed8);
 color:white;
-position:relative;
-overflow:hidden;
-}
-
-/* FACTORY BACKGROUND */
-
-.hero::after{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:url("factory.png") center/cover no-repeat;
-opacity:0.18;
-}
-
-/* TEXT ABOVE BACKGROUND */
-
-.hero *{
-position:relative;
-z-index:2;
-}
-
-/* TEXT */
-
-.hero h3{
-font-size:28px;
-margin-bottom:15px;
 }
 
 .hero h1{
-font-size:44px;
+font-size:42px;
 margin-bottom:20px;
 }
 
@@ -74,31 +46,25 @@ margin-bottom:20px;
 max-width:750px;
 line-height:1.7;
 font-size:18px;
-margin-bottom:40px;
+margin-bottom:30px;
 }
 
-/* BUTTON AREA */
-
-.buttons{
-display:flex;
-gap:25px;
-flex-wrap:wrap;
-justify-content:center;
-}
+/* BUTTON */
 
 .btn{
 background:linear-gradient(45deg,#ffcc00,#ffd633);
 color:#000;
-padding:16px 36px;
+padding:15px 35px;
 border-radius:40px;
 text-decoration:none;
 font-weight:bold;
+margin:10px;
+display:inline-block;
 transition:0.3s;
-box-shadow:0 8px 20px rgba(0,0,0,0.25);
 }
 
 .btn:hover{
-transform:translateY(-6px) scale(1.05);
+transform:scale(1.05);
 }
 
 /* SECTION */
@@ -109,16 +75,30 @@ text-align:center;
 }
 
 .section h2{
-font-size:36px;
-margin-bottom:30px;
+font-size:34px;
 color:#0b3d91;
+margin-bottom:30px;
 }
 
-.section p{
-max-width:900px;
+/* PRODUCT GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+max-width:1000px;
 margin:auto;
-font-size:18px;
-line-height:1.7;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.card h3{
+margin-bottom:10px;
 }
 
 /* LIST */
@@ -127,25 +107,18 @@ line-height:1.7;
 max-width:800px;
 margin:auto;
 text-align:left;
-font-size:18px;
 line-height:1.8;
+font-size:18px;
 }
 
-/* CATALOG BUTTON */
-
-.catalog-btn{
-margin-top:30px;
-display:inline-block;
-}
-
-/* NOTE BOX */
+/* NOTE */
 
 .note{
 background:#fff3cd;
 padding:30px;
-border-radius:10px;
 max-width:900px;
 margin:auto;
+border-radius:10px;
 text-align:left;
 line-height:1.7;
 }
@@ -176,7 +149,6 @@ justify-content:center;
 align-items:center;
 text-decoration:none;
 box-shadow:0 6px 20px rgba(0,0,0,0.3);
-z-index:999;
 }
 
 </style>
@@ -185,30 +157,64 @@ z-index:999;
 
 <body>
 
-<header class="hero">
+<!-- HERO -->
 
-<h3>🙏 Welcome 🙏</h3>
+<section class="hero">
 
 <h1>JMD ENTERPRISES (OP SHINE)</h1>
 
 <p>
-
-JMD Enterprises (OP Shine) is an Indian brand that provides high-quality detergent,
-cleaning products, and raw materials. Our mission is to deliver reliable products
-at affordable prices. We also offer bulk orders, custom manufacturing, and
-private label manufacturing services.
-
+JMD Enterprises (OP Shine) is an Indian brand providing high quality
+detergents, cleaning products and raw materials. We also provide
+bulk orders, private label manufacturing and custom formulations.
 </p>
 
-<div class="buttons">
+<a href="#products" class="btn">Our Products</a>
+<a href="#raw" class="btn">Raw Materials</a>
 
-<a href="#products" class="btn">📦 Our Products</a>
+</section>
 
-<a href="#raw" class="btn">🧪 Raw Material</a>
+<!-- PRODUCTS -->
+
+<section class="section" id="products">
+
+<h2>Our Products</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Detergent Powder</h3>
+<p>Available in Normal, Advance and Premium quality.</p>
+</div>
+
+<div class="card">
+<h3>Liquid Detergent</h3>
+<p>High quality liquid detergent for cloth washing.</p>
+</div>
+
+<div class="card">
+<h3>Hand Wash</h3>
+<p>Available in Rose, Natural and Lemon fragrance.</p>
+</div>
+
+<div class="card">
+<h3>Toilet Cleaner</h3>
+<p>Strong cleaning formula for bathroom hygiene.</p>
+</div>
+
+<div class="card">
+<h3>Floor Cleaner</h3>
+<p>Powerful floor cleaning solution.</p>
+</div>
+
+<div class="card">
+<h3>Dish Wash</h3>
+<p>Liquid dish wash for effective grease removal.</p>
+</div>
 
 </div>
 
-</header>
+</section>
 
 <!-- RAW MATERIAL -->
 
@@ -238,41 +244,36 @@ private label manufacturing services.
 
 </section>
 
-<!-- MANUFACTURING STRENGTH -->
+<!-- MANUFACTURING -->
 
 <section class="section">
 
 <h2>Our Manufacturing Strength</h2>
 
-<p>
+<p style="max-width:850px;margin:auto;font-size:18px;line-height:1.7;">
 
-We specialize in manufacturing high-quality detergent powders,
-liquid cleaners, hand wash, toilet cleaner, dish wash, and other
-cleaning products.
-
-Our facility supports bulk production, private labeling, and
-customized formulations according to customer requirements.
-We also provide fragrance customization and packaging solutions.
+We manufacture high quality detergent powder, liquid detergent,
+hand wash, toilet cleaner, dish wash and other cleaning products.
+Our manufacturing facility supports bulk production, custom formulas,
+private label manufacturing and packaging according to customer needs.
 
 </p>
 
 </section>
 
-<!-- PDF CATALOG -->
+<!-- PDF -->
 
 <section class="section">
 
-<h2>Product Catalogue</h2>
+<h2>Download Product Catalogue</h2>
 
-<p>You can download our full product catalogue below.</p>
-
-<a href="JMD-ENTERPRISES-CATALOG.pdf" class="btn catalog-btn">
-📄 Download PDF Catalogue
+<a href="JMD ENTERPRISES.pdf" class="btn">
+Download PDF Catalogue
 </a>
 
 </section>
 
-<!-- NOTE SECTION -->
+<!-- NOTE -->
 
 <section class="section">
 
@@ -280,23 +281,21 @@ We also provide fragrance customization and packaging solutions.
 
 <div class="note">
 
-1. All products can be customized according to your required quality or formulation.<br><br>
+1. All products can be prepared according to your required quality level.<br><br>
 
-2. Prices are negotiable for bulk orders above 100 KG or 100 Liters.<br><br>
+2. Prices are negotiable for orders above 100 KG / LTR quantity.<br><br>
 
-3. We require 25% advance payment for custom-made orders. This advance is non-refundable.
-The remaining payment must be completed before dispatch.<br><br>
+3. We take 25% advance payment for custom orders which is non-refundable.<br><br>
 
-4. We also manufacture products under your own brand name (Private Label Manufacturing).<br><br>
+4. We also manufacture products under your brand name (Private Label Manufacturing).<br><br>
 
-5. Order dispatch time is approximately one week. However, we always try to deliver
-as soon as possible.
+5. Dispatch time for any order is minimum one week, but we always try to deliver as soon as possible.
 
 </div>
 
 </section>
 
-<!-- CONTACT -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -306,10 +305,8 @@ as soon as possible.
 
 </footer>
 
-<!-- WHATSAPP -->
-
 <a class="whatsapp" href="https://wa.me/918860710090">💬</a>
 
 </body>
-
 </html>
+```
