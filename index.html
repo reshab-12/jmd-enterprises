@@ -1,147 +1,323 @@
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
-<title>JMD Enterprises - OP Shine</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JMD Enterprises | OP Shine</title>
 
 <style>
 
-body{
+*{
 margin:0;
-font-family:Arial;
-background:linear-gradient(135deg,#1f4037,#99f2c8);
-color:white;
-text-align:center;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
 }
 
-header{
-padding:40px;
-font-size:38px;
+body{
+background:#f5f7fb;
+color:#333;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:#0b3d91;
+color:white;
+}
+
+nav h2{
+font-size:22px;
+}
+
+nav ul{
+display:flex;
+gap:20px;
+list-style:none;
+}
+
+nav a{
+color:white;
+text-decoration:none;
 font-weight:bold;
 }
 
-.tag{
-font-size:22px;
-margin-bottom:20px;
-}
+/* HERO SECTION */
 
-.desc{
-max-width:800px;
-margin:auto;
-font-size:18px;
-line-height:1.6;
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
 padding:20px;
-}
-
-.buttons{
-margin-top:40px;
-}
-
-.btn{
-display:inline-block;
-padding:18px 40px;
-margin:15px;
-font-size:20px;
-border-radius:10px;
-text-decoration:none;
+background:linear-gradient(120deg,#0b3d91,#1e5ed8);
 color:white;
-background:#ff5722;
+position:relative;
+overflow:hidden;
+}
+
+.hero h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:25px;
+}
+
+/* BUTTON */
+
+.btn-main{
+background:#ffcc00;
+color:#000;
+padding:14px 30px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+display:inline-block;
+transition:0.3s;
+box-shadow:0 6px 15px rgba(0,0,0,0.2);
+animation:popup 0.6s ease;
+margin:10px;
+}
+
+.btn-main:hover{
+transform:translateY(-4px) scale(1.05);
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+background:#ffd633;
+}
+
+@keyframes popup{
+0%{
+transform:scale(0.8);
+opacity:0;
+}
+100%{
+transform:scale(1);
+opacity:1;
+}
+}
+
+/* PARTICLES */
+
+.hero::before{
+content:"";
+position:absolute;
+width:200%;
+height:200%;
+background-image:radial-gradient(white 2px, transparent 2px);
+background-size:50px 50px;
+opacity:0.15;
+animation:moveParticles 20s linear infinite;
+}
+
+@keyframes moveParticles{
+from{transform:translateY(0);}
+to{transform:translateY(-200px);}
+}
+
+/* SECTION */
+
+section{
+padding:70px 20px;
+text-align:center;
+}
+
+section h2{
+font-size:32px;
+margin-bottom:20px;
+color:#0b3d91;
+}
+
+/* PRODUCTS */
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+padding:30px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
 transition:0.3s;
 }
 
-.btn:hover{
-background:#ff9800;
-transform:scale(1.1);
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 12px 25px rgba(0,0,0,0.2);
 }
 
-.note{
-background:white;
-color:black;
-margin-top:60px;
-padding:30px;
-border-radius:10px;
-max-width:900px;
-margin-left:auto;
-margin-right:auto;
+.card h3{
+margin-bottom:10px;
+color:#0b3d91;
 }
 
-.whatsapp{
+/* CONTACT */
+
+.contact{
+background:#eaf2ff;
+}
+
+form{
+max-width:400px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+input,textarea{
+padding:12px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+button{
+background:#ffcc00;
+border:none;
+padding:14px;
+border-radius:25px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#ffd633;
+transform:scale(1.05);
+}
+
+/* FOOTER */
+
+footer{
+background:#0b3d91;
+color:white;
+text-align:center;
+padding:15px;
 margin-top:40px;
-font-size:20px;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<header>
+<nav>
+<h2>OP Shine</h2>
 
-🙏 नमस्कार 🙏  
-<br><br>
-JMD ENTERPRISES (OP SHINE)
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 
-</header>
 
-<div class="tag">
+<!-- HERO -->
 
-AAPKA APNA HINDUSTANI BRAND 🇮🇳
+<section class="hero">
+
+<h1>आपका अपना हिन्दुस्तानी ब्रांड</h1>
+
+<p>High Quality Detergent & Cleaning Products Manufacturer</p>
+
+<a href="#products" class="btn-main">📦 हमारे प्रोडक्ट देखें</a>
+<a href="#contact" class="btn-main">📞 संपर्क करें</a>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+<section id="products">
+
+<h2>Our Products</h2>
+
+<div class="products">
+
+<div class="card">
+<h3>Detergent Powder</h3>
+<p>High quality washing powder for clothes cleaning.</p>
+</div>
+
+<div class="card">
+<h3>Laundry Special</h3>
+<p>Advanced detergent for powerful stain removal.</p>
+</div>
+
+<div class="card">
+<h3>Liquid Detergent</h3>
+<p>Liquid solution for effective cloth washing.</p>
+</div>
+
+<div class="card">
+<h3>Fabric Whitener</h3>
+<p>Helps maintain brightness of clothes.</p>
+</div>
+
+<div class="card">
+<h3>Hand Wash</h3>
+<p>Gentle and effective hand cleaning liquid.</p>
+</div>
+
+<div class="card">
+<h3>Dish Wash</h3>
+<p>Removes grease and keeps utensils shiny.</p>
+</div>
+
+<div class="card">
+<h3>Toilet Cleaner</h3>
+<p>Powerful formula for toilet cleaning.</p>
+</div>
+
+<div class="card">
+<h3>Glass Cleaner</h3>
+<p>Keeps glass surfaces crystal clear.</p>
+</div>
 
 </div>
 
-<div class="desc">
-
-JMD Enterprises (OP Shine) एक भारतीय ब्रांड है जो उच्च गुणवत्ता वाले
-डिटर्जेंट, क्लीनिंग प्रोडक्ट्स और रॉ मटेरियल सप्लाई करता है।  
-
-हमारा उद्देश्य ग्राहकों को अच्छी क्वालिटी के प्रोडक्ट उचित कीमत पर
-उपलब्ध कराना है।  
-
-हम bulk order, custom manufacturing और private brand
-manufacturing भी करते हैं।
-
-</div>
-
-<div class="buttons">
-
-<a class="btn" href="products.html">OUR PRODUCTS</a>
-
-<a class="btn" href="raw-material.html">RAW MATERIAL</a>
-
-</div>
-
-<div class="whatsapp">
-
-📲 Direct Enquiry on WhatsApp  
-<br><br>
-
-<a style="color:#25D366;font-size:22px;" 
-href="https://wa.me/918860710090">
-
-Chat on WhatsApp
-
-</a>
-
-</div>
+</section>
 
 
-<div class="note">
+<!-- CONTACT -->
 
-<h2>Important Note</h2>
+<section id="contact" class="contact">
 
-<p>1. All items can also be prepared on your demand. You can enhance or reduce quality according to your requirement.</p>
+<h2>Contact Us</h2>
 
-<p>2. All prices are negotiable only for orders above 100 KG / Litre.</p>
+<form>
 
-<p>3. We take 25% advance payment for custom made orders (non-refundable). Remaining payment on dispatch.</p>
+<input type="text" placeholder="Your Name">
 
-<p>4. We also manufacture products under your brand name.</p>
+<input type="tel" placeholder="Phone Number">
 
-<p>5. Minimum dispatch time for any order is one week.</p>
+<textarea rows="4" placeholder="Message"></textarea>
 
-</div>
+<button type="submit">Send Inquiry</button>
+
+</form>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 JMD Enterprises | OP Shine</p>
+
+</footer>
 
 </body>
 </html>
