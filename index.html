@@ -1,6 +1,6 @@
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 
 <head>
 
@@ -36,6 +36,52 @@ padding:20px;
 background:linear-gradient(120deg,#0b3d91,#1e5ed8);
 color:white;
 position:relative;
+overflow:hidden;
+}
+
+/* FACTORY IMAGE */
+
+.hero::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:url("factory.png") center/cover no-repeat;
+opacity:0.18;
+}
+
+/* POWDER PARTICLES */
+
+.hero::before{
+content:"";
+position:absolute;
+width:200%;
+height:200%;
+background-image:radial-gradient(white 2px, transparent 2px);
+background-size:50px 50px;
+opacity:0.2;
+animation:powderMove 25s linear infinite;
+}
+
+@keyframes powderMove{
+from{transform:translateY(0);}
+to{transform:translateY(-200px);}
+}
+
+/* TEXT ABOVE BG */
+
+.hero *{
+position:relative;
+z-index:2;
+}
+
+/* TEXT */
+
+.hero h3{
+font-size:28px;
+margin-bottom:15px;
 }
 
 .hero h1{
@@ -50,7 +96,7 @@ font-size:18px;
 margin-bottom:40px;
 }
 
-/* BUTTON */
+/* BUTTONS */
 
 .buttons{
 display:flex;
@@ -67,10 +113,29 @@ border-radius:40px;
 text-decoration:none;
 font-weight:bold;
 transition:0.3s;
+box-shadow:0 8px 20px rgba(0,0,0,0.25);
 }
 
 .btn:hover{
-transform:scale(1.05);
+transform:translateY(-6px) scale(1.05);
+}
+
+/* BUBBLES */
+
+.bubble{
+position:absolute;
+bottom:-100px;
+width:20px;
+height:20px;
+background:rgba(255,255,255,0.3);
+border-radius:50%;
+animation:rise 12s infinite ease-in;
+}
+
+@keyframes rise{
+0%{transform:translateY(0);opacity:0;}
+50%{opacity:1;}
+100%{transform:translateY(-900px);opacity:0;}
 }
 
 /* SECTION */
@@ -81,9 +146,9 @@ text-align:center;
 }
 
 .section h2{
-font-size:34px;
-color:#0b3d91;
+font-size:36px;
 margin-bottom:30px;
+color:#0b3d91;
 }
 
 /* PRODUCT GRID */
@@ -103,12 +168,14 @@ border-radius:12px;
 box-shadow:0 5px 20px rgba(0,0,0,0.1);
 }
 
+/* LIST */
+
 .list{
 max-width:800px;
 margin:auto;
 text-align:left;
-line-height:1.8;
 font-size:18px;
+line-height:1.8;
 }
 
 /* NOTE */
@@ -148,6 +215,7 @@ display:flex;
 justify-content:center;
 align-items:center;
 text-decoration:none;
+z-index:999;
 }
 
 </style>
@@ -156,16 +224,16 @@ text-decoration:none;
 
 <body>
 
-<!-- HERO -->
+<header class="hero">
 
-<section class="hero">
+<h3>🙏 नमस्कार 🙏</h3>
 
 <h1>JMD ENTERPRISES (OP SHINE)</h1>
 
 <p>
-JMD Enterprises (OP Shine) is an Indian brand that provides high-quality detergent,
-cleaning products, and raw materials. We provide bulk orders, custom manufacturing
-and private label manufacturing services.
+JMD Enterprises (OP Shine) एक भारतीय ब्रांड है जो उच्च गुणवत्ता वाले डिटर्जेंट,
+क्लीनिंग प्रोडक्ट्स और रॉ मटेरियल सप्लाई करता है। हमारा उद्देश्य ग्राहकों को
+अच्छी क्वालिटी के प्रोडक्ट उचित कीमत पर उपलब्ध कराना है।
 </p>
 
 <div class="buttons">
@@ -176,7 +244,16 @@ and private label manufacturing services.
 
 </div>
 
-</section>
+<!-- bubbles -->
+
+<div class="bubble" style="left:10%"></div>
+<div class="bubble" style="left:20%"></div>
+<div class="bubble" style="left:35%"></div>
+<div class="bubble" style="left:50%"></div>
+<div class="bubble" style="left:70%"></div>
+<div class="bubble" style="left:85%"></div>
+
+</header>
 
 <!-- PRODUCTS INFO -->
 
@@ -188,98 +265,5 @@ and private label manufacturing services.
 
 <div class="card">Detergent Powder</div>
 <div class="card">Liquid Detergent</div>
-<div class="card">Hand Wash</div>
-<div class="card">Toilet Cleaner</div>
-<div class="card">Floor Cleaner</div>
-<div class="card">Dish Wash</div>
-
-</div>
-
-</section>
-
-<!-- RAW MATERIAL -->
-
-<section class="section">
-
-<h2>Raw Materials Available</h2>
-
-<div class="list">
-
-• Dolomite<br>
-• Soda Ash<br>
-• Salt Dust<br>
-• Industrial Salt<br>
-• Sodium Meta Silicate<br>
-• Colour Dana for Detergent<br>
-• Hitox Stain Remover<br>
-• TSP Powder<br>
-• SLES<br>
-• SLS Powder<br>
-• AOS<br>
-• CAPB<br>
-
-</div>
-
-</section>
-
-<!-- MANUFACTURING -->
-
-<section class="section">
-
-<h2>Our Manufacturing Strength</h2>
-
-<p style="max-width:850px;margin:auto;font-size:18px;line-height:1.7;">
-
-We manufacture detergent powder, liquid detergent, hand wash,
-toilet cleaner, dish wash and many other cleaning products.
-We also provide private label manufacturing and custom formulas.
-
-</p>
-
-</section>
-
-<!-- PDF -->
-
-<section class="section">
-
-<h2>Product Catalogue</h2>
-
-<a href="JMD ENTRPRISES.pdf" class="btn">Download PDF Catalogue</a>
-
-</section>
-
-<!-- NOTE -->
-
-<section class="section">
-
-<h2>Important Notes</h2>
-
-<div class="note">
-
-1. All products can be customized according to your required quality.<br><br>
-
-2. Prices are negotiable for orders above 100 KG / LTR.<br><br>
-
-3. We take 25% advance payment for custom orders which is non-refundable.<br><br>
-
-4. We also manufacture products under your brand name.<br><br>
-
-5. Dispatch time for any order is minimum one week.
-
-</div>
-
-</section>
-
-<footer>
-
-<p>📞 WhatsApp: +91 8860710090</p>
-<p>📧 jmd.customercareinfo@gmail.com</p>
-
-</footer>
-
-<a class="whatsapp" href="https://wa.me/918860710090">💬</a>
-
-</body>
-
-</html>
+<div clas
 ```
