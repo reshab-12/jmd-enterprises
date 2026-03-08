@@ -2,32 +2,103 @@
 <html>
 <head>
 <title>JMD Enterprises (OP Shine)</title>
+
 <style>
+
 body{
-font-family: Arial;
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
 text-align:center;
-background:#f4f4f4;
 }
 
 header{
-background:#0a6;
-color:white;
+padding:40px;
+font-size:36px;
+font-weight:bold;
+}
+
+.greeting{
+font-size:22px;
+margin-top:10px;
+animation:fadeIn 2s;
+}
+
+.container{
+margin-top:30px;
 padding:20px;
-font-size:28px;
 }
 
-button{
-padding:15px 25px;
-margin:20px;
+.card{
+background:white;
+color:black;
+max-width:800px;
+margin:auto;
+padding:30px;
+border-radius:10px;
+box-shadow:0 0 20px rgba(0,0,0,0.4);
+}
+
+.mainbtn{
+padding:16px 35px;
 font-size:18px;
-background:#0a6;
-color:white;
+margin:20px;
+background:linear-gradient(45deg,#00c896,#00a6ff);
 border:none;
+color:white;
+border-radius:8px;
 cursor:pointer;
+transition:0.4s;
 }
 
-button:hover{
-background:#095;
+.mainbtn:hover{
+transform:scale(1.1);
+box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+justify-content:center;
+align-items:center;
+}
+
+.popup-content{
+background:white;
+color:black;
+padding:30px;
+border-radius:10px;
+max-width:500px;
+text-align:center;
+animation:pop 0.4s;
+}
+
+.close{
+float:right;
+cursor:pointer;
+font-size:20px;
+}
+
+footer{
+margin-top:40px;
+padding:20px;
+font-size:14px;
+}
+
+@keyframes fadeIn{
+from{opacity:0}
+to{opacity:1}
+}
+
+@keyframes pop{
+from{transform:scale(0.5)}
+to{transform:scale(1)}
 }
 
 </style>
@@ -36,26 +107,116 @@ background:#095;
 <body>
 
 <header>
-🙏 Welcome to JMD Enterprises (OP Shine)
+JMD Enterprises (OP Shine)
 </header>
+
+<div class="greeting">
+
+<img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" width="100">
+
+<br>
+
+🙏 Namaste & Welcome 🙏
+
+</div>
+
+<div class="container">
+
+<div class="card">
 
 <h2>Aapka Apna Hindustani Brand</h2>
 
-<p>Manufacturer of Detergent, Handwash, Toilet Cleaner, Dish Wash and Raw Materials</p>
+<p>
+Welcome to <b>JMD Enterprises (OP Shine)</b>.
+We are manufacturer and supplier of high quality detergent,
+cleaning products and industrial raw materials.
+</p>
 
-<button onclick="alert('Raw Material page coming soon')">RAW MATERIAL</button>
+<p>
+Our mission is to provide reliable, affordable and quality cleaning
+solutions for businesses and households.
+</p>
 
-<button onclick="alert('Products page coming soon')">OUR PRODUCTS</button>
+<p>
+
+<b>Our Products:</b><br>
+
+Detergent Powder • Hand Wash • Toilet Cleaner • Dish Wash •  
+Liquid Detergent • Fabric Whitener • Room Spray
+
+</p>
+
+</div>
+
+<br>
+
+<button onclick="openPopup('raw')" class="mainbtn">
+RAW MATERIAL
+</button>
+
+<button onclick="openPopup('product')" class="mainbtn">
+OUR PRODUCTS
+</button>
+
+</div>
+
+
+<div id="popup" class="popup">
+
+<div class="popup-content">
+
+<span class="close" onclick="closePopup()">✖</span>
+
+<h2 id="popup-title"></h2>
+
+<p id="popup-text"></p>
+
+</div>
+
+</div>
+
+
+<footer>
+
+📞 WhatsApp: +91 8860710090
+<br>
+📧 jmd.customercareinfo@gmail.com
 
 <br><br>
 
-<p>📞 WhatsApp: 8860710090</p>
-<p>📧 Email: jmd.customercareinfo@gmail.com</p>
+Thank you for visiting JMD Enterprises
+
+</footer>
+
 
 <script>
-window.onbeforeunload = function(){
-return "Thanks for visiting JMD Enterprises";
+
+function openPopup(type){
+
+document.getElementById("popup").style.display="flex";
+
+if(type==="raw"){
+document.getElementById("popup-title").innerText="Raw Materials Available";
+document.getElementById("popup-text").innerText=
+"Dolomite, Soda Ash, Industrial Salt, Sodium Meta Silicate, SLES, SLS Powder, AOS, CAPB, TSP Powder and many more raw materials available.";
 }
+
+if(type==="product"){
+document.getElementById("popup-title").innerText="Our Products";
+document.getElementById("popup-text").innerText=
+"Detergent Powder, Hand Wash, Toilet Cleaner, Dish Wash, Liquid Detergent, Fabric Whitener, Room Spray and Cleaning Products.";
+}
+
+}
+
+function closePopup(){
+document.getElementById("popup").style.display="none";
+}
+
+window.onbeforeunload=function(){
+return "🙏 Thanks for visiting JMD Enterprises";
+}
+
 </script>
 
 </body>
