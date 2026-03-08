@@ -27,17 +27,25 @@ background:#f5f7fb;
 .hero{
 
 height:100vh;
+
 display:flex;
+
 flex-direction:column;
+
 justify-content:center;
+
 align-items:center;
+
 text-align:center;
+
 padding:20px;
 
 background:linear-gradient(120deg,#0b3d91,#1e5ed8);
 
 color:white;
+
 position:relative;
+
 overflow:hidden;
 
 }
@@ -51,9 +59,11 @@ content:"";
 position:absolute;
 
 top:0;
+
 left:0;
 
 width:100%;
+
 height:100%;
 
 background:url("factory.png") center/cover no-repeat;
@@ -71,6 +81,7 @@ content:"";
 position:absolute;
 
 width:200%;
+
 height:200%;
 
 background-image:radial-gradient(white 2px, transparent 2px);
@@ -85,16 +96,22 @@ animation:powderMove 25s linear infinite;
 
 @keyframes powderMove{
 
-from{transform:translateY(0);}
-to{transform:translateY(-200px);}
+from{
+transform:translateY(0);
+}
+
+to{
+transform:translateY(-200px);
+}
 
 }
 
-/* TEXT */
+/* TEXT STYLE */
 
 .hero h3{
 
-font-size:26px;
+font-size:28px;
+
 margin-bottom:15px;
 
 }
@@ -102,6 +119,7 @@ margin-bottom:15px;
 .hero h1{
 
 font-size:42px;
+
 margin-bottom:20px;
 
 }
@@ -110,23 +128,29 @@ margin-bottom:20px;
 
 max-width:750px;
 
-line-height:1.6;
+line-height:1.7;
 
 font-size:18px;
 
-margin-bottom:35px;
+margin-bottom:40px;
 
 }
 
-/* BUTTONS */
+/* BUTTON AREA */
 
 .buttons{
 
 display:flex;
+
 gap:20px;
+
 flex-wrap:wrap;
 
+justify-content:center;
+
 }
+
+/* BUTTON STYLE */
 
 .btn{
 
@@ -150,6 +174,8 @@ animation:popup 0.6s ease;
 
 }
 
+/* BUTTON HOVER */
+
 .btn:hover{
 
 transform:translateY(-5px) scale(1.05);
@@ -160,16 +186,24 @@ background:#ffd633;
 
 }
 
+/* POPUP ANIMATION */
+
 @keyframes popup{
 
 0%{
+
 transform:scale(0.8);
+
 opacity:0;
+
 }
 
 100%{
+
 transform:scale(1);
+
 opacity:1;
+
 }
 
 }
@@ -206,5 +240,6 @@ custom manufacturing और private brand manufacturing भी करते ह�
 </header>
 
 </body>
+
 </html>
 ```
